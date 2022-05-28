@@ -1,0 +1,47 @@
+using System;
+
+namespace matrci1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите количество элементов массива: \t");
+            int CountMas = int.Parse(Console.ReadLine());
+            int[] mas = new int[CountMas];
+            Console.WriteLine("\n Введите ваш массив:");
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                mas[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\n Ваш массив :");
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                Console.WriteLine(mas[i]);
+            }
+
+            Console.WriteLine("\n Задание 11.Найти количество различных элементов в монотонном массиве: ");
+            int t = 0;
+            int n = mas.Length;
+            for(int i=0;i<n;i++)
+            {
+                if(mas[i]!=mas[t])
+                {
+                    t++;
+                    mas[t] = mas[i];
+                }
+            }
+            n = t + 1;
+            for (int i= 0;i<n;i++)
+            {
+                Console.WriteLine(mas[i]);
+            }
+
+
+    }
+
+
+}
+}
