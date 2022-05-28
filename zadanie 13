@@ -1,0 +1,56 @@
+using System;
+
+namespace matrci1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+            int value = 1;
+
+            // Заполнение массива
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = value;
+                value += 1;
+            }
+
+            // Вывод на экран
+            for (int i = 0; i < arr.Length; i++)
+                Console.Write(arr[i] + " ");
+
+            Console.WriteLine("\n Задание 13.Двойной переворот: ");
+            int A = int.Parse(Console.ReadLine());
+            int B = int.Parse(Console.ReadLine());
+            int C = int.Parse(Console.ReadLine());
+            int D = int.Parse(Console.ReadLine());
+            int y;
+            for (int i = 1; i < n; i++)
+                arr[i] = i;
+            for (int i = A; i < (A + B) / 2; i++)
+            {
+                y = arr[i];
+                arr[i] = arr[B + A - i];
+                arr[B + A - i] = y;
+            }
+
+            for (int i = C; i < (C + D) / 2; i++)
+            {
+                y = arr[i];
+                arr[i] = arr[D + C - i];
+                arr[D + C - i] = y;
+            }
+            for (int i = 1; i <= n; i++)
+                Console.WriteLine(arr[i] + " ");
+
+
+
+
+
+        }
+
+
+}
+}
