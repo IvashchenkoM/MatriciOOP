@@ -1,0 +1,48 @@
+using System;
+
+namespace matrci1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите количество элементов массива: \t");
+            int CountMas = int.Parse(Console.ReadLine());
+            int[] mas = new int[CountMas];
+            Console.WriteLine("\n Введите ваш массив:");
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                mas[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\n Ваш массив :");
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                Console.WriteLine(mas[i]);
+            }
+
+            Console.WriteLine("\n Задание 8.Переставить соседние элементы массива: ");
+            var rslt = exchange(mas);
+           
+            Console.WriteLine (string.Join(" ", rslt));
+            Console.ReadKey();
+
+        }
+        public static int[] exchange(int[] array)
+        {
+            int[] _temp_array = new int[array.Length];
+            array.CopyTo(_temp_array, 0);
+            for (int n = 0; n < array.Length; n += 2)
+            {
+                if ((n == array.Length - 1) && (array.Length % 2 == 1)) break;
+                int a = _temp_array[n];
+                int b = _temp_array[n + 1];
+                _temp_array[n] = b;
+                _temp_array[n + 1] = a;
+            }
+            return _temp_array;
+        }
+
+    }
+}
