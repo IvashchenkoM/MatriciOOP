@@ -1,0 +1,31 @@
+using System;
+
+namespace matrci1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите количество элементов массива: \t");
+            int CountMas = int.Parse(Console.ReadLine());
+            int[] mas = new int[CountMas];
+            Console.WriteLine("\n Введите ваш массив:");
+            for (int i =0; i <mas.Length;i++)
+            {
+                
+                mas[i] = int.Parse(Console.ReadLine());
+            }
+Console.WriteLine("Задание 1.Вывести все элементы с парными номерами:");
+            for (int i = 0; i < mas.Length; i++)
+            {
+                if (i % 2 == 0)
+                    Console.Write(mas[i] + " ");
+            }
+
+            Console.ReadLine();
+
+        }
+        
+        
+    }
+}
