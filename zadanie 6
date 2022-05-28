@@ -1,0 +1,46 @@
+using System;
+
+namespace matrci1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите количество элементов массива: \t");
+            int CountMas = int.Parse(Console.ReadLine());
+            int[] mas = new int[CountMas];
+            Console.WriteLine("\n Введите ваш массив:");
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                mas[i] = int.Parse(Console.ReadLine());
+            }
+            int counter=0;
+
+            Console.WriteLine("\n Задание 6.вывести количество элементов массива, ");
+            Console.WriteLine(" в которых два соседа и которые при этом строго ");
+            Console.WriteLine(" больше обоих своих соседей: ");
+
+            for (int i = 1; i < mas.Length-1; i++)
+            {
+
+                if (mas[i] < mas[i + 1]&& mas[i]<mas[i-1])
+
+                    counter++;
+
+                
+
+            }
+          Console.WriteLine(counter);
+
+
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+    }
+}
