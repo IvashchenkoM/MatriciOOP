@@ -1,0 +1,47 @@
+using System;
+
+namespace matrci1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите количество элементов массива: \t");
+            int CountMas = int.Parse(Console.ReadLine());
+            int[] mas = new int[CountMas];
+            Console.WriteLine("\n Введите ваш массив:");
+            for (int i = 0; i <mas.Length; i++)
+            {
+
+                mas[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\n Ваш массив :");
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                Console.WriteLine(mas[i]);
+            }
+
+            Console.WriteLine("\n Задание 12.Шеренга.Найти место пети знаяя его рост: ");
+            Console.WriteLine("Введите рост Пети:");
+            int rost= int.Parse(Console.ReadLine());
+            int counter = 1;
+            
+            for(int i =0;i<mas.Length;i++)
+                if (mas[i] > rost)
+                {
+                    counter++;
+                }
+                
+                    
+                
+            Console.WriteLine("Место Пети в шеренге:");
+            Console.WriteLine(counter);
+            
+
+
+        }
+
+
+}
+}
