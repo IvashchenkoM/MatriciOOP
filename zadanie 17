@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SymmetricMatrix
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Задание 17.Проверка симетричная ли матрица");
+            Console.WriteLine("Введите n");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] a = new int[n, n];
+            Console.WriteLine("Введите єлементы массива через пробел:");
+            for (int i = 0; i < n; i++)
+            {
+                string[] s = Console.ReadLine().Split(' ');
+                for (int j = 0; j < n; j++)
+                {
+                    a[i, j] = Convert.ToInt32(s[j]);
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+
+                for (int j = 0; j < n; j++)
+                {
+                    if (a[i, j] != a[j, i])
+                        Console.WriteLine("no");
+                }
+            {
+                Console.WriteLine("yes");
+                Console.ReadLine();
+            }
+        }
+    }
+}
